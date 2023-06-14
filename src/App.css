@@ -1,0 +1,31 @@
+
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    cursor: grab;
+  }
+  
+  li:hover {
+    background-color: #e0e0e0;
+  }
+  
+  li:active {
+    cursor: grabbing;
+  }
+
+  .section-header{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .infoButton{
+    margin: 10px;
+  }
