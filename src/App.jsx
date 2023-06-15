@@ -113,7 +113,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Resume Manager</h1>
+      <h1>Select your Sections</h1>
       <DragDropContext onDragEnd={handleDragEnd}>
         <Droppable droppableId="sections">
           {(provided) => (
@@ -140,7 +140,7 @@ const App = () => {
                           </button>
                           {editIndex === index ? (
                             <div className="edit1">
-                              <input
+                              <input style={{textAlign:"center"}}
                                 type="text"
                                 value={editedName}
                                 onChange={handleInputChange}
