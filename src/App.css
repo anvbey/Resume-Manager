@@ -1,4 +1,8 @@
 
+h1{
+  text-align: center;
+  margin: 20px;
+}
 ul {
     list-style-type: none;
     padding: 0;
@@ -21,11 +25,30 @@ ul {
 
   .section-header{
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
   }
 
   .infoButton{
     margin: 10px;
+    outline: none;
+  }
+
+  .editBtn{
+    outline: none;
+    margin: 10px;
+    margin-left: 300px;
+  }
+  .edit1{
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
+  }
+
+  
+  .edit2{
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
   }

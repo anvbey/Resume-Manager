@@ -3,12 +3,12 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import "./App.css";
 const sectionList = [
   {
-    id: "profile",
+    id: "Profile Summary",
     name: "Profile Summary",
     description: "A summary of your professional profile.",
   },
   {
-    id: "experience",
+    id: "Experience",
     name: "Work Experience",
     description: "Details of your past work experience.",
   },
@@ -18,33 +18,34 @@ const sectionList = [
     description: "Projects you have worked on.",
   },
   {
-    id: "profile",
-    name: "Profile Summary",
-    description: "A summary of your professional profile.",
+    id: "Academics and Cocurricular Achievements",
+    name: "Academics",
+    description: "A summary of your Academics and Cocurricular Achievements.",
   },
   {
-    id: "experience",
-    name: "Work Experience",
-    description: "Details of your past work experience.",
+    id: "Internship",
+    name: "Internship",
+    description: "Details of your past Summer Internship Experience.",
   },
   {
-    id: "projects",
-    name: "Projects",
-    description: "Projects you have worked on.",
-  },{
-    id: "profile",
-    name: "Profile Summary",
-    description: "A summary of your professional profile.",
+    id: "Certifications",
+    name: "Certifications",
+    description: "Certifications you have got.",
   },
   {
-    id: "experience",
-    name: "Work Experience",
-    description: "Details of your past work experience.",
+    id: "Leadership Positions",
+    name: "Leadership Positions",
+    description: "A summary of your Leadership Positions.",
   },
   {
-    id: "projects",
-    name: "Projects",
-    description: "Projects you have worked on.",
+    id: "Extra Curricular Activities",
+    name: "Extras",
+    description: "Details of your Extra Curricular Activities.",
+  },
+  {
+    id: "Education",
+    name: "Education",
+    description: "Tell us about your Education.",
   },
 ];
 
@@ -131,8 +132,14 @@ const App = () => {
                     >
                       <div className="section">
                         <div className="section-header">
+                          <button
+                            className="infoButton"
+                            onClick={() => handleInfo(index)}
+                          >
+                            Info
+                          </button>
                           {editIndex === index ? (
-                            <>
+                            <div className="edit1">
                               <input
                                 type="text"
                                 value={editedName}
@@ -142,29 +149,37 @@ const App = () => {
                                 Save
                               </button>
                               <button onClick={handleCancelEdit}>Cancel</button>
-                            </>
+                              <label>
+                            <input
+                              type="checkbox"
+                              checked={section.isActive}
+                              onChange={() => handleToggle(index)}
+                            />
+                            Display Section
+                          </label>
+                            </div>
                           ) : (
-                            <>
+                            <div className="edit2">
                               <h3>{section.name}</h3>
                               <button
+                                className="editBtn"
                                 onClick={() => handleEdit(index, section.name)}
                               >
                                 Edit
                               </button>
-                              <button onClick={() => handleInfo(index)}>
-                                Info
-                              </button>
-                            </>
+                              <label>
+                            <input
+                              type="checkbox"
+                              checked={section.isActive}
+                              onChange={() => handleToggle(index)}
+                            />
+                            Display Section
+                          </label>
+                            </div>
+                            
                           )}
+                          
                         </div>
-                        <label>
-                          <input
-                            type="checkbox"
-                            checked={section.isActive}
-                            onChange={() => handleToggle(index)}
-                          />
-                          Display Section
-                        </label>
                       </div>
                     </li>
                   )}
